@@ -1,0 +1,17 @@
+import express from 'express'
+import jwt from '../library/jwt'
+const router = express.Router()
+import table from '../library/db'
+import { check, validationResult } from 'express-validator'
+import asyncHandler from 'express-async-handler'
+const db = table("{{name}}")
+/*
+  ---
+*/
+router.get("/", asyncHandler(async (req, res) => {
+  var query = db.select().build()
+  let data = await db.query(query)
+  res.send(data)
+}))
+
+module.exports = router

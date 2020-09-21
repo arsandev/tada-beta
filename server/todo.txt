@@ -1,0 +1,3 @@
+- Cari template
+- Set variabel dan value pada doc
+- membuat table tanda tangan
